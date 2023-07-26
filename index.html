@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LinkifyHub.</title>
+</head>
+<body>
+    <main>
+        
+        <h1 class="h1txt">LinkifyHub.</h1>
+
+        <!-- URL shortener -->
+        <label for="url-shortener">URL shortener</label>
+        <div class="url-shortener">
+            <form id="urlForm" class="first-container">
+                <div class="first-input-container">
+                    <img src="utilities/add-link-icon.png" class="first-input-img">
+                    <input type="url" id="long-url" class="first-input-field" placeholder="Paste your URL here">
+                </div>
+                <button id="shorten-button" type="submit" class="first-button">Shorten</button>
+            </form>
+
+            <div class="second_container">
+                <div class="second-input_container">
+                    <input type="url" id="short-url" class="second-input-field" placeholder="http://abbrefy.xyz/a3a4aa">
+                </div>
+                <button class="first-button" style="background: #00bec6;" onclick="copyText()">Copy</button>
+            </div>
+        </div>
+
+        <!-- Drop a file to get a link -->
+        <label for="file-upload">Drop a file to get a link</label>
+        <div class="file-upload">
+            <div class="first-container">
+                <div class="file-input-container">
+                    <img src="utilities/attach-file-icon.png" class="first-input-img">
+                    <span class="file-palaceholder">Drop your attachments here</span>
+                    <input type="file" id="" class="first-input-field" style="opacity: 0; position: relative;">
+                </div>
+                <button id="" class="first-button">Get Link</button>
+            </div>
+
+            <div class="second_container">
+                <div class="second-input_container">
+                    <input type="url" id="textbox" class="second-input-field" placeholder="https://sidehustlebootca...">
+                </div>
+                <button class="first-button" style="background: #00bec6;" onclick="copyText()">Copy</button>
+            </div>
+        </div> 
+            
+        <!-- URL extraction -->
+        <label for="url-shortener">URL extraction</label>
+        <div class="URL-extraction">
+            <div class="first-container">
+                <div class="first-input-container">
+                    <img src="utilities/attach-file-icon.png" class="first-input-img">
+                    <input type="url" id="" class="first-input-field" placeholder="Drop your attachments here">
+                </div>
+                <button id="" class="first-button">Extract URL</button>
+            </div>
+        </div>
+
+        <p class="built-design">built with ♥ from YourmixJNR_Dev</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
