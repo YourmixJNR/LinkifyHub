@@ -6,9 +6,23 @@ LinkifyHub is a versatile web application that offers the following features:
 2. File Uploader: Quickly drop files to generate sharable links for easy sharing and distribution.
 3. URL Extractor: Extract all URLs from a text input or uploaded file to gather all links in one place.
 
-## Demo
+## Table of contents
 
-[Live Demo](https://linkifyhub.netlify.app/)
+- [Overview](#overview)
+  - [Screenshots](#screenshots)
+  - [Features](#Features)
+  - [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Usage](#usage)
+  - [API Integration](#api-integration)
+  - [Continued development](#continued-development)
+- [License](#license)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+- Live Site URL: [Live Demo](https://linkifyhub.netlify.app/)
 ## Screenshots
 
 ![Screenshot 1](screenshoots/Desktop.png)
@@ -70,6 +84,13 @@ cd linkifyhub
 LinkifyHub uses external APIs for URL shortening. API documentation can be found at:
 
 - URL Shortener API: https://abbrefy.xyz/abbrefy_api
+
+## Continued development
+
+
+As of now, only the URL shortener feature is fully functional. The file uploader and URL extractor features are still in progress, and I plan to work on them in the future.
+
+Contributions are highly encouraged! Whether you are a developer, designer, or tester, your help is valuable in making LinkifyHub even better. If you have ideas, bug fixes, or new features to propose, please consider contributing by opening issues or submitting pull requests.
 
 ## License
 
