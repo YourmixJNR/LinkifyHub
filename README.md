@@ -11,9 +11,8 @@ LinkifyHub is a versatile web application that offers the following features:
 [Live Demo](https://linkifyhub.netlify.app/)
 ## Screenshots
 
-[Desktop](screenshoots/Desktop.png)
-[Tablet](screenshoots/Tablet.png)
-[Mobile](screenshoots/Mobile.png)
+![Screenshot 1](screenshoots/Desktop.png)
+![Screenshot 2](screenshoots/Mobile.png)
 
 ## Features
 
