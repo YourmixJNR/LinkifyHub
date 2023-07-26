@@ -8,11 +8,12 @@ LinkifyHub is a versatile web application that offers the following features:
 
 ## Demo
 
-[Live Demo](https://your-demo-link.com) - Add a link to the live demo of LinkifyHub (if available).
-
+[Live Demo](https://linkifyhub.netlify.app/)
 ## Screenshots
 
-Include relevant screenshots or GIFs showcasing the different features of LinkifyHub.
+(screenshoots/Desktop.png)
+(screenshoots/Tablet.png)
+(screenshoots/Mobile.png)
 
 ## Features
 
@@ -36,7 +37,7 @@ To run LinkifyHub on your local machine, follow these steps:
 1. Clone this repository to your local machine using `git clone`.
 
 ```bash
-git clone https://github.com/your-username/linkifyhub.git
+git clone https://github.com/YourmixJNR/LinkifyHub.git
 ```
 2. Navigate to the project directory.
 ```
@@ -67,13 +68,13 @@ cd linkifyhub
 
 ## API Integration
 
-LinkifyHub uses external APIs for URL shortening and file uploading. API documentation can be found at:
+LinkifyHub uses external APIs for URL shortening. API documentation can be found at:
 
-- URL Shortener API: https://your-url-shortener-api/docs
+- URL Shortener API: https://abbrefy.xyz/abbrefy_api
 
 ## License
 
-This project is licensed under the [MIT License.](https://your-demo-link.com)
+This project is licensed under the [MIT License.](https://opensource.org/licenses/MIT)
 
 ## Contributing
 
@@ -81,4 +82,4 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 ## Acknowledgments
 
-Special thanks to [Abbrefy] for their [tool].
+Special thanks to [Abbrefy](https://abbrefy.xyz) for their tool.
