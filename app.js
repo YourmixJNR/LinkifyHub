@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: headers,
         body: data
       });
-
       const result = await response.json();
       const shortUrl = result.url;
       shortUrlInput.value = shortUrl;
