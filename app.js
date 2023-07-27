@@ -1,18 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-  document.getElementById('urlForm').addEventListener('submit', function(e) {
-    e.preventDefault();
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
   const shortenButton = document.getElementById('shorten-button');
   const longUrlInput = document.getElementById('long-url');
   const shortUrlInput = document.getElementById('short-url');
-  
-  shortenButton.addEventListener('click', () => {
+
+  shortenButton.addEventListener('click', async (event) => {
+    event.preventDefault();
     const longUrl = longUrlInput.value.trim();
 
-    // Regular expression to check if the input is a valid URL
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
@@ -20,34 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-
     const headers = {
       'Authorization': `Bearer ${accessToken}`,
       'Content-Type': 'application/json'
     };
 
     const data = JSON.stringify({
-      url : longUrl
+      url: longUrl
     });
-    
+
     try {
-      fetch(apiUrl, {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: headers,
         body: data
-      })
-      .then(response => response.json())
-      .then(result => {
-        const shortUrl = result.url;
-        shortUrlInput.value = shortUrl;
-      })
-      .catch(error => {
-        console.error('Fetch error:', error);
       });
+
+      const result = await response.json();
+      const shortUrl = result.url;
+      shortUrlInput.value = shortUrl;
     } catch (error) {
-      console.error('Pre-fetch error:', error);
+      console.error('Error:', error);
     }
-  });
   });
 });
 
