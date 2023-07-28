@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fileNameElement.textContent = '';
     }
   });
+  
 });
 
 function copyText() {
