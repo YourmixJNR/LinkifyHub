@@ -8,10 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadButton = document.getElementById('upload-button');
     const uploadedUrl = document.getElementById('uploaded-url');
 
+    const MAX_FILE_SIZE = 10 * 1024 * 1024;
+
     fileInput.addEventListener('change', () => {
     const file = fileInput.files[0];
 
     if (file) {
+        if (file.size > MAX_FILE_SIZE) {
+            alert('File size exceeds the maximum allowed limit (10MB). Please select a smaller file.');
+            return;
+        }
         fileNameElement.textContent = `${file.name}`;
         filePlaceHolder.textContent = '';
     } else {
