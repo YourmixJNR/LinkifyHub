@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error:', error);
     }
   });
+
+  
 });
 
 function copyText() {

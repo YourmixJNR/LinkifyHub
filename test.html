@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="file-uploader">
+        <input type="file" id="file-input" accept=".txt, .pdf, .png, .jpg, .doc, .docx">
+        <label for="file-input" class="file-label">Choose a file</label>
+        <button id="upload-button" class="upload-button">Upload</button>
+    </div>
+    <div class="uploaded-url" id="uploaded-url"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accessToken = 'AFAIN6V.X0STA84-KG7MEGB-MAV57C4-BXQ7DWJ';
+            const apiUrl = 'https://file.io'; // Replace with the actual API endpoint
+
+            const fileInput = document.getElementById('file-input');
+            const uploadButton = document.getElementById('upload-button');
+            const uploadedUrl = document.getElementById('uploaded-url');
+
+            fileInput.addEventListener('change', () => {
+                uploadedUrl.textContent = ''; // Clear the previously displayed URL when selecting a new file
+            });
+
+            uploadButton.addEventListener('click', async () => {
+                const file = fileInput.files[0];
+
+                if (!file) {
+                    alert('Please select a file.');
+                    return;
+                }
+
+                const headers = {
+                    'Authorization': `Bearer ${accessToken}`
+                };
+
+                const formData = new FormData();
+                formData.append('file', file);
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: headers,
+                        body: formData,
+                    });
+
+                    const data = await response.json();
+                    const fileUrl = data.link; // Use 'link' property to get the uploaded file URL
+
+                    uploadedUrl.textContent = 'Uploaded File URL: ' + fileUrl;
+                    uploadedUrl.href = fileUrl;
+                    uploadedUrl.target = '_blank'; // Open the link in a new tab
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('File upload failed. Please try again later.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
