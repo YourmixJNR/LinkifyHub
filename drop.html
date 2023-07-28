@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.file-upload {
+  position: relative;
+}
+
+.first-input-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-browse-button {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+}
+
+.custom-browse-button:hover {
+  border-color: #aaa;
+}
+
+#file-name {
+  margin: 0;
+}
+
+#file-type {
+  margin-top: 5px;
+  opacity: 0.6;
+}
+
+    </style>
+    <div class="file-upload">
+        <!-- Custom Browse Button -->
+        <div class="custom-browse-button" id="custom-browse-button">
+          <span id="file-name"></span>
+        </div>
+    
+        <!-- Actual file input -->
+        <input type="file" id="file-input" class="first-input-field">
+      </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+  const fileInput = document.getElementById('file-input');
+  const customBrowseButton = document.getElementById('custom-browse-button');
+  const fileNameElement = document.getElementById('file-name');
+
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+
+    if (file) {
+      // Update the custom browse button content with the file details
+      fileNameElement.textContent = `${file.name}`;
+    } else {
+      // If no file selected, display the default message
+      fileNameElement.textContent = '';
+    }
+  });
+});
+    </script>      
+</body>
+</html>

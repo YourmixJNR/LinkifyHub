@@ -154,6 +154,10 @@ input[type=url]::placeholder {
     border: 1px solid transparent;
 }
 
+.file-name {
+    color: var(--deep-blue) !important;
+}
+
 .file-palaceholder {
     position: absolute;
     font-family: 'lato';
