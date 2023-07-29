@@ -24,6 +24,35 @@ body {
     background-size: cover;
 }
 
+/* Your existing CSS styles for other elements */
+
+.hidden {
+    display: none;
+}
+
+@keyframes progressAnimation {
+    0% {
+        content: "LinkifyHub";
+    }
+    33% {
+        content: "LinkifyHub.";
+    }
+    66% {
+        content: "LinkifyHub..";
+    }
+    100% {
+        content: "LinkifyHub...";
+    }
+}
+
+#progress-indicator {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff; /* Replace with your desired text color */
+    animation: progressAnimation 1.5s infinite; /* Use the progressAnimation for the progressing effect */
+}
+
+
 main {
     padding-left: 10%;
     padding-right: 10%;
