@@ -17,17 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    const progressIndicator = document.getElementById('progress-indicator');
-    progressIndicator.classList.remove('hidden'); // Show the progress indicator
-
-    // Your code to shorten the link here (using fetch or any other method)
-
-    // Simulate a delay for demonstration purposes (you can remove this in your actual implementation)
-    await new Promise(resolve => setTimeout(resolve, 3000));
-
-    // After the link is shortened (or when the process is complete), hide the progress indicator
-    progressIndicator.classList.add('hidden');
-
     const headers = {
       'Authorization': `Bearer ${accessToken}`,
       'Content-Type': 'application/json'

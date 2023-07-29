@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shorten URL</title>
+  <style>
+   /* Style the spinner */
+.spinner {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  display: none;
+  margin: 0 auto;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Add the spinner element -->
+<div id="spinner" class="spinner"></div>
+
+<!-- Your form with the input field and submit button -->
+<form id="urlForm">
+  <input type="url" id="long-url" placeholder="Paste your URL here">
+  <button id="shorten-button">Shorten</button>
+</form>
+
+<!-- Element to display the shortened URL -->
+<div id="short-url-container">
+  <input type="text" id="short-url" readonly>
+</div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefym/';
+
+  const shortenButton = document.getElementById('shorten-button');
+  const longUrlInput = document.getElementById('long-url');
+  const shortUrlInput = document.getElementById('short-url');
+  const spinner = document.getElementById('spinner');
+
+  shortenButton.addEventListener('click', async (event) => {
+    event.preventDefault();
+    const longUrl = longUrlInput.value.trim();
+
+    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+
+    if (longUrl === '' || !urlRegex.test(longUrl)) {
+      alert('Please enter a valid URL.');
+      return;
+    }
+
+    // Show the spinner while fetching the shortened URL
+    spinner.style.display = 'block';
+
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+
+    const data = JSON.stringify({
+      url: longUrl
+    });
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: headers,
+        body: data
+      });
+
+      const result = await response.json();
+      const shortUrl = result.url;
+      shortUrlInput.value = shortUrl;
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      // Hide the spinner after the fetch is complete
+      spinner.style.display = 'none';
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
