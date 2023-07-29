@@ -17,15 +17,14 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-        z-index: 998; /* Set z-index to be below the loader and text */
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10;
     }
 
     .container {
         position: relative;
         top: 10%;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto;
         width: 500px;
         padding: 40px;
         background: #f1f0ee;
@@ -45,7 +44,7 @@
         margin: auto;
     }
 
-    .loader--dot {
+    /* .loader--dot {
         animation-name: loader;
         animation-timing-function: ease-in-out;
         animation-duration: 3s;
@@ -56,14 +55,20 @@
         background-color: black;
         position: absolute;
         border: 2px solid white;
-    }
+    } */
 
     .loader--text {
         position: absolute;
-        top: 50%;
-        left: 30px;
-        margin-top: -10px;
+        top: 0;
+        left: 0;
         font-weight: bold;
+        width: 4rem;
+        margin: auto;
+    }
+
+    .loader--text:after {
+        position: absolute;
+        content: "Linkify";
         animation-name: loading-text;
         animation-duration: 3s;
         animation-iteration-count: infinite;
@@ -86,16 +91,24 @@
 
     @keyframes loading-text {
         0% {
-            transform: translateX(0);
+            transform: translateX(50px);
+            content: "Linkify";
         }
         25% {
-            transform: translateX(40px);
+            transform: translateX(60px);
+            content: "LinkifyH.";
         }
         50% {
-            transform: translateX(80px);
+            transform: translateX(70px);
+            content: "LinkifyHu..";
         }
         75% {
-            transform: translateX(120px);
+            transform: translateX(80px);
+            content: "LinkifyHub...";
+        }
+        100% {
+            transform: translateX(50px);
+            content: "Linkify";
         }
     }
 
@@ -117,7 +130,7 @@
     <div class='container'>
         <div class='loader'>
             <div class='loader--dot'></div>
-            <div class='loader--text'>LinkifyHub</div>
+            <div class='loader--text'></div>
         </div>
     </div>
 </div> <!-- Add the overlay -->
