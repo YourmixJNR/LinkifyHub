@@ -134,10 +134,6 @@ input[type=url]::placeholder {
     font-weight: 700;
     top: 40%;
     left: 20%;
-}
-
-.loader--text:after {
-    position: absolute;
     content: "Linkify";
     animation: loading-txt 3s infinite ;
 }
@@ -163,12 +159,6 @@ input[type=url]::placeholder {
         transform: translateX(50px);
         content: "Linkify";
     }
-}
-
-.loader-txt:after {
-    position: absolute;
-    content: "Linkify";
-    animation: loading-txt 3s infinite;
 }
 
 .second_container {

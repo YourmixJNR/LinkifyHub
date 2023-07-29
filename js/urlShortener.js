@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
+  const preloader = document.querySelector('.preloader-overl');
+  preloader.style.display = 'none';
+
   const shortenButton = document.getElementById('shorten-button');
   const longUrlInput = document.getElementById('long-url');
   const shortUrlInput = document.getElementById('short-url');
@@ -27,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     try {
+
+      // Display the preloader while waiting for the API response
+    const preloader = document.querySelector('.preloader-overl');
+    preloader.style.display = 'block';
+
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: headers,
@@ -36,8 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const result = await response.json();
       const shortUrl = result.url;
       shortUrlInput.value = shortUrl;
+      // Hide the preloader after the API response is received
+    preloader.style.display = 'none';
     } catch (error) {
       console.error('Error:', error);
+      // Hide the preloader in case of an error
+    const preloader = document.querySelector('.preloader-overl');
+    preloader.style.display = 'none';
     }
   });
 });
