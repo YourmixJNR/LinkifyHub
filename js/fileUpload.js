@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const accessToken = 'AFAIN6V.X0STA84-KG7MEGB-MAV57C4-BXQ7DWJ';
     const apiUrl = 'https://file.io';
 
+    const preloader = document.querySelector('.preloader-overl');
+    preloader.style.display = 'none';
+
     const fileInput = document.getElementById('file-input');
     const fileNameElement = document.getElementById('file-name');
     const filePlaceHolder = document.getElementById('file-palaceholder');
@@ -43,6 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
     formData.append('file', file);
 
     try {
+
+        const preloader = document.querySelector('.preloader-overl');
+        preloader.style.display = 'block';
+
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: headers,
@@ -52,9 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
         const fileUrl = data.link; // Use 'link' property to get the uploaded file URL
         uploadedUrl.value = fileUrl;
+
+        preloader.style.display = 'none';
     } catch (error) {
         console.error('Error:', error);
         alert('File upload failed. Please try again later.');
+
+        const preloader = document.querySelector('.preloader-overl');
+        preloader.style.display = 'none';
     }
   });
 });

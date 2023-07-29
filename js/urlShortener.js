@@ -31,9 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
 
-      // Display the preloader while waiting for the API response
-    const preloader = document.querySelector('.preloader-overl');
-    preloader.style.display = 'block';
+      const preloader = document.querySelector('.preloader-overl');
+      preloader.style.display = 'block';
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -44,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const result = await response.json();
       const shortUrl = result.url;
       shortUrlInput.value = shortUrl;
-      // Hide the preloader after the API response is received
-    preloader.style.display = 'none';
+
+      preloader.style.display = 'none';
     } catch (error) {
       console.error('Error:', error);
-      // Hide the preloader in case of an error
+
     const preloader = document.querySelector('.preloader-overl');
     preloader.style.display = 'none';
     }

@@ -135,30 +135,24 @@ input[type=url]::placeholder {
     font-weight: 700;
     top: 40%;
     left: 20%;
-    content: "Linkify";
-    animation: loading-txt 3s infinite ;
+    animation: loading-txt 3s infinite;
 }
-
-@keyframes loading-txt {
+  
+  @keyframes loading-txt {
     0% {
-        transform: translateX(50px);
-        content: "Linkify";
+      transform: translateX(20px);
     }
     25% {
-        transform: translateX(60px);
-        content: "LinkifyH.";
+      transform: translateX(40%);
     }
     50% {
-        transform: translateX(70px);
-        content: "LinkifyHu..";
+      transform: translateX(60px);
     }
     75% {
-        transform: translateX(80px);
-        content: "LinkifyHub...";
+      transform: translateX(80px);
     }
     100% {
-        transform: translateX(50px);
-        content: "Linkify";
+      transform: translateX(20px);
     }
 }
 
