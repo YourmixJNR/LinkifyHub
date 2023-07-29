@@ -1,65 +1,125 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body {
+        background: #fff;
+    }
+
+    /* Added styles for the overlay */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        z-index: 998; /* Set z-index to be below the loader and text */
+    }
+
+    .container {
+        position: relative;
+        top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        padding: 40px;
+        background: #f1f0ee;
+        box-sizing: border-box;
+        border-radius: 5px;
+        z-index: 999;
+    }
+
+    .loader {
+        height: 20px;
+        width: 250px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .loader--dot {
+        animation-name: loader;
+        animation-timing-function: ease-in-out;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        background-color: black;
+        position: absolute;
+        border: 2px solid white;
+    }
+
+    .loader--text {
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        margin-top: -10px;
+        font-weight: bold;
+        animation-name: loading-text;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes loader {
+        15% {
+            transform: translateX(0);
+        }
+        45% {
+            transform: translateX(230px);
+        }
+        65% {
+            transform: translateX(230px);
+        }
+        95% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes loading-text {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(40px);
+        }
+        50% {
+            transform: translateX(80px);
+        }
+        75% {
+            transform: translateX(120px);
+        }
+    }
+
+    @media(max-width:700px) {
+        .container {
+            width: 350px;
+        }
+    }
+</style>
 <body>
-    <div class="file-uploader">
-        <input type="file" id="file-input" accept=".txt, .pdf, .png, .jpg, .doc, .docx">
-        <label for="file-input" class="file-label">Choose a file</label>
-        <button id="upload-button" class="upload-button">Upload</button>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <h1>Hello</h1>
+    <div class='overlay'>
+    <div class='container'>
+        <div class='loader'>
+            <div class='loader--dot'></div>
+            <div class='loader--text'>LinkifyHub</div>
+        </div>
     </div>
-    <div class="uploaded-url" id="uploaded-url"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const accessToken = 'AFAIN6V.X0STA84-KG7MEGB-MAV57C4-BXQ7DWJ';
-            const apiUrl = 'https://file.io'; // Replace with the actual API endpoint
-
-            const fileInput = document.getElementById('file-input');
-            const uploadButton = document.getElementById('upload-button');
-            const uploadedUrl = document.getElementById('uploaded-url');
-
-            fileInput.addEventListener('change', () => {
-                uploadedUrl.textContent = ''; // Clear the previously displayed URL when selecting a new file
-            });
-
-            uploadButton.addEventListener('click', async () => {
-                const file = fileInput.files[0];
-
-                if (!file) {
-                    alert('Please select a file.');
-                    return;
-                }
-
-                const headers = {
-                    'Authorization': `Bearer ${accessToken}`
-                };
-
-                const formData = new FormData();
-                formData.append('file', file);
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: headers,
-                        body: formData,
-                    });
-
-                    const data = await response.json();
-                    const fileUrl = data.link; // Use 'link' property to get the uploaded file URL
-
-                    uploadedUrl.textContent = 'Uploaded File URL: ' + fileUrl;
-                    uploadedUrl.href = fileUrl;
-                    uploadedUrl.target = '_blank'; // Open the link in a new tab
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('File upload failed. Please try again later.');
-                }
-            });
-        });
-    </script>
+</div> <!-- Add the overlay -->
 </body>
-</html> -->
+</html>

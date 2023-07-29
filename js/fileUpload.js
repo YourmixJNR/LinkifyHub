@@ -83,4 +83,4 @@ function copyFileUrl() {
         console.error('Copy failed:', error);
         alert('Copy failed. Please select and copy manually.');
     }
-}
+};
