@@ -157,7 +157,7 @@ input[type=url]::placeholder {
 }
 
 .results-display {
-    display: block;
+    display: none;
 }
 
 .results-dis-inner {
@@ -168,9 +168,20 @@ input[type=url]::placeholder {
     overflow: auto; /* Add this property for scrollability */
 }
 
+.h1-headings {
+    font-family: 'lato';
+    font-size: 25px;
+}
+
+.results-url {
+    font-family: 'lato';
+    font-size: 16px;
+}
+
 .p-style {
-    padding: 10px;
-    margin: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 10px 0;
 }
 
 .second_container {
