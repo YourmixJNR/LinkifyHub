@@ -156,34 +156,6 @@ input[type=url]::placeholder {
     }
 }
 
-.results-display {
-    display: none;
-}
-
-.results-dis-inner {
-    top: 10%;
-    width: 500px;
-    height: 500px;
-    padding: 20px;
-    overflow: auto; /* Add this property for scrollability */
-}
-
-.h1-headings {
-    font-family: 'lato';
-    font-size: 25px;
-}
-
-.results-url {
-    font-family: 'lato';
-    font-size: 16px;
-}
-
-.p-style {
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 10px 0;
-}
-
 .second_container {
     display: flex;
     margin-top: 30px;
@@ -249,6 +221,40 @@ input[type=url]::placeholder {
     color: var(--dark-transp);
     padding-left: 60px;
 }
+
+/* Image/Video link extraction */
+
+.results-display {
+    display: none;
+}
+
+.results-dis-inner {
+    top: 10%;
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    overflow: auto; /* Add this property for scrollability */
+}
+
+.res-headings {
+    font-family: 'lato';
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.results-url a {
+    display: block; /* Change the display property to block */
+    font-family: 'lato';
+    font-size: 16px;
+    text-decoration: none; 
+    margin-bottom: 10px; 
+}
+
+.results-url a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Design */
 
 .built-design {
     text-align: center;
