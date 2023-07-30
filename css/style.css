@@ -230,10 +230,10 @@ input[type=url]::placeholder {
 
 .results-dis-inner {
     top: 10%;
-    width: 500px;
     height: 500px;
     padding: 20px;
-    overflow: auto; /* Add this property for scrollability */
+    overflow: auto; /* Add this property for horizontal scroll */
+    word-wrap: break-word;
 }
 
 .res-headings {
