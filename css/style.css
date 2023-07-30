@@ -247,7 +247,7 @@ input[type=url]::placeholder {
     font-family: 'lato';
     font-size: 16px;
     text-decoration: none; 
-    margin-bottom: 10px; 
+    margin-bottom: 15px; 
 }
 
 .results-url a:hover {
