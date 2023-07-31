@@ -5,9 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsBox = document.querySelector('.results-display');
     resultsBox.style.display = 'none';
   
-    const preloader = document.querySelector('.preloader-overl');
-    preloader.style.display = 'none';
-  
     const extractButton = document.getElementById('extract-button');
     const urUrlInput = document.getElementById('ur-url');
     const resultsUrlDisplay = document.getElementById('results-url');

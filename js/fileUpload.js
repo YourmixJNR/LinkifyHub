@@ -2,9 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const accessToken = 'AFAIN6V.X0STA84-KG7MEGB-MAV57C4-BXQ7DWJ';
     const apiUrl = 'https://file.io';
 
-    const preloader = document.querySelector('.preloader-overl');
-    preloader.style.display = 'none';
-
     const fileInput = document.getElementById('file-input');
     const fileNameElement = document.getElementById('file-name');
     const filePlaceHolder = document.getElementById('file-palaceholder');

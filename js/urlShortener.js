@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
-  const preloader = document.querySelector('.preloader-overl');
-  preloader.style.display = 'none';
+  const toast = document.querySelector('.toast-box');
+  toast.style.display = 'none';
 
   const shortenButton = document.getElementById('shorten-button');
   const longUrlInput = document.getElementById('long-url');
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
+
       alert('Please enter a valid URL.');
       return;
     }

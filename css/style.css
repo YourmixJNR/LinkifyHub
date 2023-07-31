@@ -167,6 +167,7 @@ input[type=url]::placeholder {
 
 .toast-box {
     position: relative;
+    display: none;
 }
 
 .toast-box .wrap-txt-ico {
