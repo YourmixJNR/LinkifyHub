@@ -2,9 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
-  const toast = document.querySelector('.toast-box');
-  toast.style.display = 'none';
-
   const shortenButton = document.getElementById('shorten-button');
   const longUrlInput = document.getElementById('long-url');
   const shortUrlInput = document.getElementById('short-url');
@@ -16,8 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
+      const toast = document.querySelector('.toast-box');
+      const toastDisplay = document.getElementById('real-wrap-txt');
 
-      alert('Please enter a valid URL.');
+      toast.style.display = 'block';
+      toastDisplay.textContent = 'Invalid URL';
+
+      // Set a timeout to hide the toast after 3 seconds (adjust the duration as needed)
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 5000);
+      // alert('Please enter a valid URL.');
       return;
     }
 
@@ -54,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+function icoFunc() {
+  const toast = document.querySelector('.toast-box');
+  toast.style.display = 'none';
+};
 
 function copyText() {
   const shortUrlInput = document.getElementById('short-url').value;
