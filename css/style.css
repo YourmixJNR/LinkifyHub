@@ -163,6 +163,45 @@ input[type=url]::placeholder {
     }
 }
 
+/* Toast */
+
+.toast-box {
+    position: relative;
+}
+
+.toast-box .wrap-txt-ico {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 50px;
+    background: var(--deep-blue);
+    animation: toast-animation 0.5s ease-in-out;
+}
+
+.toast-box .wrap-txt-ico .wrap-txt {
+    font-size: 14px;
+    font-family: 'lato';
+    color: var(--white);
+}
+
+.wrap-ico {
+    background: url(../assets/icons/cancel-ico.png);
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+@keyframes toast-animation {
+    0% {
+        right: -100%; /* Start position above the viewport */
+      }
+}
+
 .second_container {
     display: flex;
     margin-top: 30px;
