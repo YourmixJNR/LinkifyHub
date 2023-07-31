@@ -116,6 +116,13 @@ input[type=url]::placeholder {
     background: rgba(0, 0, 0, 0.5);
     z-index: 90;
     display: none;
+    animation: drop-animation 0.3s ease-in;
+}
+
+@keyframes drop-animation {
+    0% {
+        top: -100%; /* Start position above the viewport */
+      }
 }
 
 .prl-container {
