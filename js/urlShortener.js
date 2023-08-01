@@ -71,11 +71,15 @@ function icoFunc() {
 };
 
 function copyText() {
-  const shortUrlInput = document.getElementById('short-url').value;
+  const shortUrlInput = document.getElementById('short-url');
 
-  if (shortUrlInput === '') {
+  const shortUrl = shortUrlInput.value.trim();
+
+  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+
+  if (shortUrlInput === '' || !urlRegex.test(shortUrl)) {
     toast.style.display = 'block';
-    toastDisplay.textContent = 'Can\'t copy';
+    toastDisplay.textContent = 'Invalid \\ Empty URL';
   } else {
     const inputField = document.createElement('input');
     inputField.value = shortUrlInput;
@@ -90,7 +94,7 @@ function copyText() {
       
       // Show the "URL copied!" toast
       toast.style.display = 'block';
-      toastDisplay.textContent = 'Copied!!!';
+      toastDisplay.textContent = 'URL Copied!';
     } catch (error) {
       console.error('Copy failed:', error);
       alert('Copy failed. Please select and copy manually.');
