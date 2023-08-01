@@ -77,12 +77,12 @@ function copyText() {
 
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-  if (shortUrlInput === '' || !urlRegex.test(shortUrl)) {
+  if (shortUrl === '' || !urlRegex.test(shortUrl)) {
     toast.style.display = 'block';
     toastDisplay.textContent = 'Invalid \\ Empty URL';
   } else {
     const inputField = document.createElement('input');
-    inputField.value = shortUrlInput;
+    inputField.value = shortUrl;
     document.body.appendChild(inputField);
 
     inputField.select();
