@@ -2,7 +2,6 @@
 const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
 const shortUrlInput = document.getElementById('short-url');
-const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
 const toast = document.querySelector('.toast-box');
 const toastDisplay = document.getElementById('real-wrap-txt');
@@ -16,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const longUrl = longUrlInput.value.trim();
 
-    // const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
       
@@ -73,11 +72,8 @@ function icoFunc() {
 
 function copyText() {
   const shortUrlInput = document.getElementById('short-url').value;
-  const toast = document.querySelector('.toast-box');
-  const toastDisplay = document.getElementById('real-wrap-txt');
-  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-  if (shortUrlInput === '' || !urlRegex) {
+  if (shortUrlInput === '') {
     toast.style.display = 'block';
     toastDisplay.textContent = 'Can\'t copy';
   } else {
@@ -94,7 +90,7 @@ function copyText() {
       
       // Show the "URL copied!" toast
       toast.style.display = 'block';
-      toastDisplay.textContent = 'URL copied!';
+      toastDisplay.textContent = 'Copied!!!';
     } catch (error) {
       console.error('Copy failed:', error);
       alert('Copy failed. Please select and copy manually.');
