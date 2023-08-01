@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Set a timeout to hide the toast after 3 seconds (adjust the duration as needed)
       setTimeout(() => {
         toast.style.display = 'none';
-      }, 5000);
+      }, 2000);
       // alert('Please enter a valid URL.');
       return;
     }
@@ -103,5 +103,5 @@ function copyText() {
   // Hide the toast after 5 seconds (5000 milliseconds)
   setTimeout(() => {
     toast.style.display = 'none';
-  }, 5000);
+  }, 2000);
 };
