@@ -1,10 +1,15 @@
+// Get Input field
+const longUrlInput = document.getElementById('long-url');
+const shortenButton = document.getElementById('shorten-button');
+const shortUrlInput = document.getElementById('short-url');
+
+const toast = document.querySelector('.toast-box');
+const toastDisplay = document.getElementById('real-wrap-txt');
+
+// Fetching API
 document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
-
-  const shortenButton = document.getElementById('shorten-button');
-  const longUrlInput = document.getElementById('long-url');
-  const shortUrlInput = document.getElementById('short-url');
 
   shortenButton.addEventListener('click', async (event) => {
     event.preventDefault();
@@ -13,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
-      const toast = document.querySelector('.toast-box');
-      const toastDisplay = document.getElementById('real-wrap-txt');
-
+      
       toast.style.display = 'block';
       toastDisplay.textContent = 'Invalid URL';
 
@@ -61,33 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
 function icoFunc() {
-  const toast = document.querySelector('.toast-box');
   toast.style.display = 'none';
 };
 
 function copyText() {
   const shortUrlInput = document.getElementById('short-url').value;
+  const toast = document.querySelector('.toast-box');
+  const toastDisplay = document.getElementById('real-wrap-txt');
 
   if (shortUrlInput === '') {
-    alert("Can't copy empty field");
-    return;
+    toast.style.display = 'block';
+    toastDisplay.textContent = 'Can\'t copy';
+  } else {
+    const inputField = document.createElement('input');
+    inputField.value = shortUrlInput;
+    document.body.appendChild(inputField);
+
+    inputField.select();
+    inputField.setSelectionRange(0, 99999); // For mobile devices
+
+    try {
+      document.execCommand('copy');
+      document.body.removeChild(inputField); // Remove the temporary input field
+      
+      // Show the "URL copied!" toast
+      toast.style.display = 'block';
+      toastDisplay.textContent = 'URL copied!';
+    } catch (error) {
+      console.error('Copy failed:', error);
+      alert('Copy failed. Please select and copy manually.');
+    }
   }
-
-  const inputField = document.createElement('input');
-  inputField.value = shortUrlInput;
-  document.body.appendChild(inputField);
-
-  inputField.select();
-  inputField.setSelectionRange(0, 99999); // For mobile devices
-
-  try {
-    const successful = document.execCommand('copy');
-    document.body.removeChild(inputField); // Remove the temporary input field
-    const message = successful ? 'Copied to clipboard!' : 'Copy failed. Please select and copy manually.';
-    alert(message);
-  } catch (error) {
-    console.error('Copy failed:', error);
-    alert('Copy failed. Please select and copy manually.');
-  }
+  // Hide the toast after 5 seconds (5000 milliseconds)
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, 5000);
 };
