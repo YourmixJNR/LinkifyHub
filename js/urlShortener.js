@@ -2,6 +2,7 @@
 const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
 const shortUrlInput = document.getElementById('short-url');
+const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
 const toast = document.querySelector('.toast-box');
 const toastDisplay = document.getElementById('real-wrap-txt');
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const longUrl = longUrlInput.value.trim();
 
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+    // const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (longUrl === '' || !urlRegex.test(longUrl)) {
       
