@@ -75,8 +75,9 @@ function copyText() {
   const shortUrlInput = document.getElementById('short-url').value;
   const toast = document.querySelector('.toast-box');
   const toastDisplay = document.getElementById('real-wrap-txt');
+  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
-  if (shortUrlInput === '') {
+  if (shortUrlInput === '' || !urlRegex) {
     toast.style.display = 'block';
     toastDisplay.textContent = 'Can\'t copy';
   } else {
