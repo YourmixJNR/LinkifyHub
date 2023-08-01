@@ -178,7 +178,7 @@ input[type=url]::placeholder {
     gap: 5px;
     padding: 10px 50px;
     background: var(--deep-blue);
-    animation: toast-animation 0.5s ease-in-out;
+    animation: toast-animation 0.5s ease-in;
 }
 
 .toast-box .wrap-txt-ico .wrap-txt {
@@ -200,7 +200,13 @@ input[type=url]::placeholder {
 @keyframes toast-animation {
     0% {
         right: -100%; /* Start position above the viewport */
-      }
+    }
+  
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
 }
 
 .second_container {
