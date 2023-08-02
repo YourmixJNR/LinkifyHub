@@ -1,4 +1,4 @@
-// Get Input field
+// Get Input fields and buttons
 const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
 const shortUrlInput = document.getElementById('short-url');
@@ -15,18 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault();
     const longUrl = longUrlInput.value.trim();
 
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-
-    if (longUrl === '' || !urlRegex.test(longUrl)) {
-      
-      toast.style.display = 'block';
-      toastDisplay.textContent = 'Invalid URL';
-
-      // Set a timeout to hide the toast after 3 seconds (adjust the duration as needed)
-      setTimeout(() => {
-        toast.style.display = 'none';
-      }, 2000);
-      // alert('Please enter a valid URL.');
+    if (!isValidUrl(longUrl)) {
+      displayToast('Invalid URL', 2000);
       return;
     }
 
@@ -40,9 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     try {
-
-      const preloader = document.querySelector('.preloader-overl');
-      preloader.style.display = 'block';
+      showPreloader();
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -54,32 +42,47 @@ document.addEventListener('DOMContentLoaded', () => {
       const shortUrl = result.url;
       shortUrlInput.value = shortUrl;
 
-      preloader.style.display = 'none';
+      hidePreloader();
     } catch (error) {
       console.error('Error:', error);
-
-    const preloader = document.querySelector('.preloader-overl');
-    preloader.style.display = 'none';
+      hidePreloader();
     }
   });
 });
 
+function isValidUrl(url) {
+  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+  return urlRegex.test(url);
+}
 
+function showPreloader() {
+  const preloader = document.querySelector('.preloader-overl');
+  preloader.style.display = 'block';
+}
+
+function hidePreloader() {
+  const preloader = document.querySelector('.preloader-overl');
+  preloader.style.display = 'none';
+}
+
+function displayToast(message, duration) {
+  toast.style.display = 'block';
+  toastDisplay.textContent = message;
+
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, duration);
+}
 
 function icoFunc() {
   toast.style.display = 'none';
-};
+}
 
 function copyText() {
-  const shortUrlInput = document.getElementById('short-url');
-
   const shortUrl = shortUrlInput.value.trim();
 
-  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-
-  if (shortUrl === '' || !urlRegex.test(shortUrl)) {
-    toast.style.display = 'block';
-    toastDisplay.textContent = 'Invalid \\ Empty URL';
+  if (!isValidUrl(shortUrl)) {
+    displayToast('Invalid \\ Empty URL', 2000);
   } else {
     const inputField = document.createElement('input');
     inputField.value = shortUrl;
@@ -91,17 +94,12 @@ function copyText() {
     try {
       document.execCommand('copy');
       document.body.removeChild(inputField); // Remove the temporary input field
-      
+
       // Show the "URL copied!" toast
-      toast.style.display = 'block';
-      toastDisplay.textContent = 'URL Copied!';
+      displayToast('URL Copied!', 2000);
     } catch (error) {
       console.error('Copy failed:', error);
       alert('Copy failed. Please select and copy manually.');
     }
   }
-  // Hide the toast after 5 seconds (5000 milliseconds)
-  setTimeout(() => {
-    toast.style.display = 'none';
-  }, 2000);
-};
+}
