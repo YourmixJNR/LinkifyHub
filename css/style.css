@@ -180,7 +180,7 @@ input[type=url]::placeholder {
     align-items: center;
     gap: 5px;
     padding: 10px 50px;
-    background: var(--deep-blue);
+    background: #e3425a;
     animation: toast-animation 0.5s ease-in;
 }
 
