@@ -6,15 +6,19 @@ const shortUrlInput = document.getElementById('short-url');
 const toast = document.querySelector('.toast-box');
 const toastDisplay = document.getElementById('real-wrap-txt');
 
-// Fetching API
+const preloader = document.querySelector('.preloader-overl');
+
+// Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
+  // Event listener for clicking the shorten button
   shortenButton.addEventListener('click', async (event) => {
     event.preventDefault();
     const longUrl = longUrlInput.value.trim();
 
+    // Check if the URL is valid
     if (!isValidUrl(longUrl)) {
       displayToast('Invalid URL', 2000);
       return;
@@ -30,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     try {
+      // Show preloader while fetching API
       showPreloader();
 
       const response = await fetch(apiUrl, {
@@ -42,45 +47,53 @@ document.addEventListener('DOMContentLoaded', () => {
       const shortUrl = result.url;
       shortUrlInput.value = shortUrl;
 
+      // Hide preloader after API response
       hidePreloader();
     } catch (error) {
       console.error('Error:', error);
+      // Hide preloader in case of error
       hidePreloader();
     }
   });
 });
 
+// Function to validate URL using regex
 function isValidUrl(url) {
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
   return urlRegex.test(url);
 }
 
+// Function to show the preloader
 function showPreloader() {
-  const preloader = document.querySelector('.preloader-overl');
   preloader.style.display = 'block';
 }
 
+// Function to hide the preloader
 function hidePreloader() {
-  const preloader = document.querySelector('.preloader-overl');
   preloader.style.display = 'none';
 }
 
+// Function to display toast message
 function displayToast(message, duration) {
   toast.style.display = 'block';
   toastDisplay.textContent = message;
 
+  // Set timeout to hide the toast after the specified duration
   setTimeout(() => {
     toast.style.display = 'none';
   }, duration);
 }
 
+// Function to hide the toast when the "x" icon is clicked
 function icoFunc() {
   toast.style.display = 'none';
 }
 
+// Function to copy the short URL to clipboard
 function copyText() {
   const shortUrl = shortUrlInput.value.trim();
 
+  // Check if the URL is valid
   if (!isValidUrl(shortUrl)) {
     displayToast('Invalid \\ Empty URL', 2000);
   } else {
