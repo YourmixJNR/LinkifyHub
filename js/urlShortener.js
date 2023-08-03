@@ -1,19 +1,11 @@
-// Get Input fields and buttons
 const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
 const shortUrlInput = document.getElementById('short-url');
 
-const toast = document.querySelector('.toast-box');
-const toastDisplay = document.getElementById('real-wrap-txt');
-
-const preloader = document.querySelector('.preloader-overl');
-
-// Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   const accessToken = '27a17dc32c8243a2bfa16bd26d28132b';
   const apiUrl = 'https://abbrefy.xyz/api/v1/url/abbrefy/';
 
-  // Event listener for clicking the shorten button
   shortenButton.addEventListener('click', async (event) => {
     event.preventDefault();
     const longUrl = longUrlInput.value.trim();
@@ -56,38 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// Function to validate URL using regex
-function isValidUrl(url) {
-  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-  return urlRegex.test(url);
-}
-
-// Function to show the preloader
-function showPreloader() {
-  preloader.style.display = 'block';
-}
-
-// Function to hide the preloader
-function hidePreloader() {
-  preloader.style.display = 'none';
-}
-
-// Function to display toast message
-function displayToast(message, duration) {
-  toast.style.display = 'block';
-  toastDisplay.textContent = message;
-
-  // Set timeout to hide the toast after the specified duration
-  setTimeout(() => {
-    toast.style.display = 'none';
-  }, duration);
-}
-
-// Function to hide the toast when the "x" icon is clicked
-function icoFunc() {
-  toast.style.display = 'none';
-}
 
 // Function to copy the short URL to clipboard
 function copyText() {

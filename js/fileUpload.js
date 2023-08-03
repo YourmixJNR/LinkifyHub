@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fileNameElement.textContent = '';
         uploadedUrl.textContent = ''; // Clear the previously displayed URL when selecting a new file
     }
+
   });
 
   uploadButton.addEventListener('click', async () => {
@@ -67,6 +68,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// Function to display toast message
+// function displayToast(message, duration) {
+//     toast.style.display = 'block';
+//     toastDisplay.textContent = message;
+  
+//     // Set timeout to hide the toast after the specified duration
+//     setTimeout(() => {
+//       toast.style.display = 'none';
+//     }, duration);
+//   }
 
 function copyFileUrl() {
     const fileUrl = document.getElementById('uploaded-url').value;
