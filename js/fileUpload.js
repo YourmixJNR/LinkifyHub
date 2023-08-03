@@ -29,11 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
-  uploadButton.addEventListener('click', async () => {
+  uploadButton.addEventListener('click', async (event) => {
+    event.preventDefault();
     const file = fileInput.files[0];
 
     if (!file) {
-        alert('Please select a file.');
+        displayToast('Please select a file', 2000);
         return;
     }
 
