@@ -1,12 +1,13 @@
+const fileInput = document.getElementById('file-input');
+const fileNameElement = document.getElementById('file-name');
+const filePlaceHolder = document.getElementById('file-palaceholder');
+const uploadButton = document.getElementById('upload-button');
+const uploadedUrl = document.getElementById('uploaded-url');
+
+// Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     const accessToken = 'AFAIN6V.X0STA84-KG7MEGB-MAV57C4-BXQ7DWJ';
     const apiUrl = 'https://file.io';
-
-    const fileInput = document.getElementById('file-input');
-    const fileNameElement = document.getElementById('file-name');
-    const filePlaceHolder = document.getElementById('file-palaceholder');
-    const uploadButton = document.getElementById('upload-button');
-    const uploadedUrl = document.getElementById('uploaded-url');
 
     const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (file) {
         if (file.size > MAX_FILE_SIZE) {
-            alert('File size exceeds the maximum allowed limit (10MB). Please select a smaller file.');
+            displayToast('File exceeds limit (10MB)', 2000);
             return;
         }
         fileNameElement.textContent = `${file.name}`;
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         fileNameElement.textContent = '';
         uploadedUrl.textContent = ''; // Clear the previously displayed URL when selecting a new file
     }
-
   });
 
   uploadButton.addEventListener('click', async () => {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
 
-        const preloader = document.querySelector('.preloader-overl');
+        // const preloader = document.querySelector('.preloader-overl');
         preloader.style.display = 'block';
 
         const response = await fetch(apiUrl, {
