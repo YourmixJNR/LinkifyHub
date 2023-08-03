@@ -1,8 +1,9 @@
 const fileInput = document.getElementById('file-input');
-const fileNameElement = document.getElementById('file-name');
-const filePlaceHolder = document.getElementById('file-palaceholder');
 const uploadButton = document.getElementById('upload-button');
 const uploadedUrl = document.getElementById('uploaded-url');
+
+const fileNameElement = document.getElementById('file-name');
+const filePlaceHolder = document.getElementById('file-placeholder');
 
 // Event listener for DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -68,17 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-// Function to display toast message
-// function displayToast(message, duration) {
-//     toast.style.display = 'block';
-//     toastDisplay.textContent = message;
-  
-//     // Set timeout to hide the toast after the specified duration
-//     setTimeout(() => {
-//       toast.style.display = 'none';
-//     }, duration);
-//   }
 
 function copyFileUrl() {
     const fileUrl = document.getElementById('uploaded-url').value;

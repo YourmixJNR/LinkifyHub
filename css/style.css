@@ -263,7 +263,7 @@ input[type=url]::placeholder {
     color: var(--deep-blue) !important;
 }
 
-.file-palaceholder {
+.file-placeholder {
     position: absolute;
     font-family: 'lato';
     font-style: normal;
@@ -335,7 +335,7 @@ input[type=url]::placeholder {
 
     input[placeholder],
     .second-input-field::placeholder,
-    .file-palaceholder {
+    .file-placeholder {
         font-size: 18px;
     }
 

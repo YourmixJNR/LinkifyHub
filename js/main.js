@@ -1,5 +1,7 @@
 // Global variables
 const preloader = document.querySelector('.preloader-overl');
+const toast = document.querySelector('.toast-box');
+const toastDisplay = document.getElementById('real-wrap-txt');
 
 // Function to validate URL using regex
 function isValidUrl(url) {
@@ -19,9 +21,6 @@ function hidePreloader() {
 
 // Function to display toast message
 function displayToast(message, duration) {
-  const toast = document.querySelector('.toast-box');
-  const toastDisplay = document.getElementById('real-wrap-txt');
-
   toast.style.display = 'block';
   toastDisplay.textContent = message;
 
@@ -33,6 +32,5 @@ function displayToast(message, duration) {
 
 // Function to hide the toast when the "x" icon is clicked
 function icoFunc() {
-  const toast = document.querySelector('.toast-box');
   toast.style.display = 'none';
 }
