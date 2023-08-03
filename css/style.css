@@ -145,7 +145,7 @@ input[type=url]::placeholder {
     animation: loading-txt 3s infinite;
 }
   
-  @keyframes loading-txt {
+@keyframes loading-txt {
     0% {
       transform: translateX(20px);
     }
@@ -166,11 +166,13 @@ input[type=url]::placeholder {
 /* Toast */
 
 .toast-box {
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 10%;
     display: none;
 }
 
-.toast-box .wrap-txt-ico,.toast-copied-box {
+.toast-box .wrap-txt-ico{
     position: absolute;
     right: 0;
     display: flex;
