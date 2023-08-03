@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
   
-      const endpoint = apiUrl + '?apikey=' + apiKey + '&url=' + encodeURIComponent(urUrl);
+      const endpoint = `${apiUrl}?apikey=${apiKey}&url=${encodeURIComponent(urUrl)}`;
   
       try {
         showPreloader();
