@@ -170,6 +170,7 @@ input[type=url]::placeholder {
     left: 0;
     right: 10%;
     display: none;
+    z-index: 9999;
 }
 
 .toast-box .wrap-txt-ico{
