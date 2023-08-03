@@ -56,6 +56,7 @@ function copyText() {
   // Check if the URL is valid
   if (!isValidUrl(shortUrl)) {
     displayToast('Invalid \\ Empty URL', 2000);
+    return;
   } else {
     const inputField = document.createElement('input');
     inputField.value = shortUrl;
