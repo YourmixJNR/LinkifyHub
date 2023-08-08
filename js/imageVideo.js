@@ -21,28 +21,41 @@ document.addEventListener('DOMContentLoaded', () => {
   
       try {
         showPreloader();
-  
+    
         const response = await fetch(endpoint);
         const result = await response.json();
-        const resultsUrl = result.images;
-  
-        // Clear any previous results and append the new image links to the resultsUrlDisplay div
-        resultsUrlDisplay.innerHTML = '';
-        resultsUrl.forEach(url => {
-          const linkElement = document.createElement('a');
-          linkElement.href = url;
-          linkElement.textContent = url;
-          linkElement.classList.add('results-url');
-          linkElement.target = '_blank';
-          resultsUrlDisplay.appendChild(linkElement);
+        const resultsUrlImages = result.images;
+        const resultsUrlVideos = result.videos;
+    
+        // For Image Links
+        const resultsImages = document.getElementById('results-url-images');
+        resultsImages.innerHTML = '';
+        resultsUrlImages.forEach(url => {
+            const linkElement = document.createElement('a');
+            linkElement.href = url;
+            linkElement.textContent = url;
+            linkElement.classList.add('results-url');
+            linkElement.target = '_blank';
+            resultsImages.appendChild(linkElement);
         });
-  
+    
+        // For Video Links
+        const resultsVideos = document.getElementById('results-url-videos');
+        resultsVideos.innerHTML = '';
+        resultsUrlVideos.forEach(url => {
+            const linkElement = document.createElement('a');
+            linkElement.href = url;
+            linkElement.textContent = url;
+            linkElement.classList.add('results-url');
+            linkElement.target = '_blank';
+            resultsVideos.appendChild(linkElement);
+        });
+    
         hidePreloader();
         resultsBox.style.display = 'block';
-
-      } catch (error) {
+    } catch (error) {
         console.error('Error:', error);
-      }
+    }    
     });
   });
 
