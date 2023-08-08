@@ -7,6 +7,24 @@ const resultsUrlDisplay = document.getElementById('results-url');
 const resultsImages = document.getElementById('results-url-images');
 const resultsVideos = document.getElementById('results-url-videos');
 
+function appendLinks(links, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  
+  links.forEach(url => {
+      const linkElement = document.createElement('a');
+      linkElement.href = url;
+      linkElement.textContent = url;
+      linkElement.classList.add('results-url');
+      linkElement.target = '_blank';
+      container.appendChild(linkElement);
+
+      const linkContainer = document.createElement('div'); // Create a new <div> for each link
+      linkContainer.appendChild(linkElement);
+      container.appendChild(linkContainer);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '70f72cd3748a0afd4ddbf55df9d2376c1e16174b'; // Replace 'YOUR_API_KEY' with your actual API key
     const apiUrl = 'https://extractorapi.com/api/v1/extractor';
@@ -30,27 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultsUrlImages = result.images;
         const resultsUrlVideos = result.videos;
     
-        // For Image Links
-        resultsImages.innerHTML = '';
-        resultsUrlImages.forEach(url => {
-            const linkElement = document.createElement('a');
-            linkElement.href = url;
-            linkElement.textContent = url;
-            linkElement.classList.add('results-url');
-            linkElement.target = '_blank';
-            resultsImages.appendChild(linkElement);
-        });
-    
-        // For Video Links
-        resultsVideos.innerHTML = '';
-        resultsUrlVideos.forEach(url => {
-            const linkElement = document.createElement('a');
-            linkElement.href = url;
-            linkElement.textContent = url;
-            linkElement.classList.add('results-url');
-            linkElement.target = '_blank';
-            resultsVideos.appendChild(linkElement);
-        });
+        // Append Image Links
+        appendLinks(resultsUrlImages, 'results-url-images');
+
+        // Append Video Links
+        appendLinks(resultsUrlVideos, 'results-url-videos');
     
         hidePreloader();
         resultsBox.style.display = 'block';

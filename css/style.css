@@ -288,7 +288,7 @@ input[type=url]::placeholder {
     top: 10%;
     height: 500px;
     padding: 20px;
-    overflow: auto; /* Add this property for horizontal scroll */
+    overflow: auto;
     word-wrap: break-word;
 }
 
@@ -298,8 +298,8 @@ input[type=url]::placeholder {
     margin-bottom: 10px;
 }
 
-.results-url a {
-    display: block; /* Change the display property to block */
+.results-box a {
+    display: block;
     font-family: 'lato';
     font-size: 16px;
     text-decoration: none; 
