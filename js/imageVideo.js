@@ -4,6 +4,9 @@ const urUrlInput = document.getElementById('ur-url');
 const resultsBox = document.querySelector('.results-display');
 const resultsUrlDisplay = document.getElementById('results-url');
 
+const resultsImages = document.getElementById('results-url-images');
+const resultsVideos = document.getElementById('results-url-videos');
+
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '70f72cd3748a0afd4ddbf55df9d2376c1e16174b'; // Replace 'YOUR_API_KEY' with your actual API key
     const apiUrl = 'https://extractorapi.com/api/v1/extractor';
@@ -28,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultsUrlVideos = result.videos;
     
         // For Image Links
-        const resultsImages = document.getElementById('results-url-images');
         resultsImages.innerHTML = '';
         resultsUrlImages.forEach(url => {
             const linkElement = document.createElement('a');
@@ -40,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     
         // For Video Links
-        const resultsVideos = document.getElementById('results-url-videos');
         resultsVideos.innerHTML = '';
         resultsUrlVideos.forEach(url => {
             const linkElement = document.createElement('a');
