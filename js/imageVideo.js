@@ -2,7 +2,8 @@ const extractButton = document.getElementById('extract-button');
 const urUrlInput = document.getElementById('ur-url');
 
 const resultsBox = document.querySelector('.results-display');
-const resultsUrlDisplay = document.getElementById('results-url');
+const resultsUrlDisplayImages = document.getElementById('resultsUrlDisplayImages');
+const resultsUrlDisplayVideos = document.getElementById('resultsUrlDisplayVideos');
 
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '70f72cd3748a0afd4ddbf55df9d2376c1e16174b'; // Replace 'YOUR_API_KEY' with your actual API key
@@ -27,15 +28,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const resultsUrl = result.images;
         const resultsVideo = result.videos; // Assuming you have this data
 
-        resultsUrlDisplayImages.innerHTML = ''; // Clear previous image links
+        // For Image Links
+        resultsUrlDisplayImages.innerHTML = '';
         resultsUrl.forEach(url => {
-            const linkElement = createLinkElement(url);
+            const linkElement = document.createElement('a');
+            linkElement.href = url;
+            linkElement.textContent = url;
+            linkElement.classList.add('results-url');
+            linkElement.target = '_blank';
             resultsUrlDisplayImages.appendChild(linkElement);
         });
 
-        resultsUrlDisplayVideos.innerHTML = ''; // Clear previous video links
+        // For Video Links
+        resultsUrlDisplayVideos.innerHTML = '';
         resultsVideo.forEach(url => {
-            const linkElement = createLinkElement(url);
+            const linkElement = document.createElement('a');
+            linkElement.href = url;
+            linkElement.textContent = url;
+            linkElement.classList.add('results-url');
+            linkElement.target = '_blank';
             resultsUrlDisplayVideos.appendChild(linkElement);
         });
 
