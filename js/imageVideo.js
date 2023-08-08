@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(endpoint);
         const result = await response.json();
         const resultsUrl = result.images;
+        const resultVideo = result.video;
   
         // Clear any previous results and append the new image links to the resultsUrlDisplay div
         resultsUrlDisplay.innerHTML = '';
@@ -36,6 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
           linkElement.target = '_blank';
           resultsUrlDisplay.appendChild(linkElement);
         });
+
+        resultVideo.forEach(url => {
+          const linkElement = document.createElement('a');
+          linkElement.href = url;
+          linkElement.textContent = url;
+          linkElement.classList.add('results-url');
+          linkElement.target = '_blank';
+          resultsUrlDisplay.appendChild(linkElement);
+        })
   
         hidePreloader();
         resultsBox.style.display = 'block';
