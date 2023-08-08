@@ -25,36 +25,35 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(endpoint);
         const result = await response.json();
         const resultsUrl = result.images;
-        const resultVideo = result.video;
-  
-        // Clear any previous results and append the new image links to the resultsUrlDisplay div
-        resultsUrlDisplay.innerHTML = '';
+        const resultsVideo = result.videos; // Assuming you have this data
+
+        resultsUrlDisplayImages.innerHTML = ''; // Clear previous image links
         resultsUrl.forEach(url => {
-          const linkElement = document.createElement('a');
-          linkElement.href = url;
-          linkElement.textContent = url;
-          linkElement.classList.add('results-url');
-          linkElement.target = '_blank';
-          resultsUrlDisplay.appendChild(linkElement);
+            const linkElement = createLinkElement(url);
+            resultsUrlDisplayImages.appendChild(linkElement);
         });
 
-        resultVideo.forEach(url => {
-          const linkElement = document.createElement('a');
-          linkElement.href = url;
-          linkElement.textContent = url;
-          linkElement.classList.add('results-url');
-          linkElement.target = '_blank';
-          resultsUrlDisplay.appendChild(linkElement);
-        })
-  
-        hidePreloader();
-        resultsBox.style.display = 'block';
+        resultsUrlDisplayVideos.innerHTML = ''; // Clear previous video links
+        resultsVideo.forEach(url => {
+            const linkElement = createLinkElement(url);
+            resultsUrlDisplayVideos.appendChild(linkElement);
+        });
 
-      } catch (error) {
+        hidePreloader();
+    } catch (error) {
         console.error('Error:', error);
-      }
+    }
     });
   });
+
+function createLinkElement(url) {
+  const linkElement = document.createElement('a');
+  linkElement.href = url;
+  linkElement.textContent = url;
+  linkElement.classList.add('results-url');
+  linkElement.target = '_blank'; // Open link in a new tab
+  return linkElement;
+}
 
   function clickMeToClose() {
     resultsBox.style.display = 'none';
