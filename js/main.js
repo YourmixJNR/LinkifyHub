@@ -3,6 +3,37 @@ const preloader = document.querySelector('.preloader-overl');
 const toast = document.querySelector('.toast-box');
 const toastDisplay = document.getElementById('real-wrap-txt');
 
+const checkStatus = document.querySelector('.check-status');
+const statusText = document.getElementById('check-status-txt');
+let timeoutId; // Declare the timeoutId variable
+
+function checkUserStatus(status, duration) {
+    checkStatus.style.display = 'block';
+    statusText.textContent = status;
+
+    // Clear any previous timeout
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+        checkStatus.style.display = 'none';
+    }, duration);
+}
+
+// Event listener for when the browser goes online
+window.addEventListener('online', () => {
+    checkUserStatus('Welcome back', 2000);
+});
+
+// Event listener for when the browser goes offline
+window.addEventListener('offline', () => {
+    checkUserStatus("You're Offline", 2000);
+});
+
+// Initial check when the page loads
+if (!navigator.onLine) {
+    checkUserStatus("You're Offline", 2000);
+}
+
 // Function to validate URL using regex
 function isValidUrl(url) {
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
