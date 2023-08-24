@@ -21,12 +21,12 @@ function checkUserStatus(status, duration) {
 
 // Event listener for when the browser goes online
 window.addEventListener('online', () => {
-    checkUserStatus('Welcome back', 2000);
+    checkUserStatus('Welcome back', 3000);
 });
 
 // Event listener for when the browser goes offline
 window.addEventListener('offline', () => {
-    checkUserStatus("You're Offline", 2000);
+    checkUserStatus("You're Offline", 3000);
 });
 
 // Function to validate URL using regex
