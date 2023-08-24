@@ -133,9 +133,11 @@ input[type=url]::placeholder {
 
 @keyframes check-animation {
     0% {
-        top: -100%; /* Start position above the viewport */
-    }
-  
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
 }
 
 /* Pre-Loader */
