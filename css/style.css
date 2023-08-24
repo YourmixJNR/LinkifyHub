@@ -242,11 +242,6 @@ input[type=url]::placeholder {
   
 }
 
-/* .fade-out {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-} */
-
 .second_container {
     display: flex;
     margin-top: 30px;
@@ -358,6 +353,11 @@ input[type=url]::placeholder {
         padding-left: 5%;
         padding-right: 5%;
     } 
+
+    .check-status {
+        right: 40%;
+    }
+
     label {
         font-size: 25px;
     }

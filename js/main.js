@@ -29,11 +29,6 @@ window.addEventListener('offline', () => {
     checkUserStatus("You're Offline", 2000);
 });
 
-// Initial check when the page loads
-if (!navigator.onLine) {
-    checkUserStatus("You're Offline", 2000);
-}
-
 // Function to validate URL using regex
 function isValidUrl(url) {
   const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
