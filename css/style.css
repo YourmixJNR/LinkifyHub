@@ -105,6 +105,39 @@ input[type=url]::placeholder {
     cursor: pointer;
 }
 
+/* Online status */
+
+.check-status {
+    position: fixed;
+    left: 0;
+    right: 50%;
+    /* display: none; */
+    z-index: 9999;
+}
+
+.check-status .check-status-box {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    padding: 5px ;
+    background: #e3425a;
+    animation: check-animation 0.5s ease-in;
+}
+
+.check-status .check-status-box .check-txt {
+    font-size: 14px;
+    font-family: 'lato';
+    color: var(--white);
+}
+
+@keyframes check-animation {
+    0% {
+        top: -100%; /* Start position above the viewport */
+    }
+  
+}
+
 /* Pre-Loader */
 
 .preloader-overl {
@@ -207,10 +240,10 @@ input[type=url]::placeholder {
   
 }
 
-.fade-out {
+/* .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-out;
-}
+} */
 
 .second_container {
     display: flex;
