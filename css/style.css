@@ -131,6 +131,10 @@ input[type=url]::placeholder {
     color: var(--white);
 }
 
+.check-status .check-status-box.active {
+    background: var(--deep-blue);
+}
+
 @keyframes check-animation {
     0% {
         transform: translateY(-100%);
