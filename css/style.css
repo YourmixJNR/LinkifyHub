@@ -121,12 +121,8 @@ input[type=url]::placeholder {
     display: flex;
     align-items: center;
     padding: 5px ;
-    background: #e3425a;
+    background-color: #e3425a;
     animation: check-animation 0.5s ease-in;
-}
-
-.check-status .check-status-box.active {
-    background: var(--deep-blue);
 }
 
 .check-status .check-status-box .check-txt {
