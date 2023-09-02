@@ -125,14 +125,14 @@ input[type=url]::placeholder {
     animation: check-animation 0.5s ease-in;
 }
 
+.check-status .check-status-box.active {
+    background: var(--deep-blue);
+}
+
 .check-status .check-status-box .check-txt {
     font-size: 14px;
     font-family: 'lato';
     color: var(--white);
-}
-
-.check-status .check-status-box.active {
-    background: var(--deep-blue);
 }
 
 @keyframes check-animation {

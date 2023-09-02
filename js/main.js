@@ -21,11 +21,13 @@ function checkUserStatus(status, duration) {
 
 // Event listener for when the browser goes online
 window.addEventListener('online', () => {
+    checkStatus.classList.add('active');
     checkUserStatus('Welcome back', 3000);
 });
 
 // Event listener for when the browser goes offline
 window.addEventListener('offline', () => {
+    checkStatus.classList.add('active');
     checkUserStatus("You're Offline", 3000);
 });
 
