@@ -1,3 +1,3 @@
-# Exclude all .env files
+# Ignore the .env file
 
-*.env
+.env
