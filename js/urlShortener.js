@@ -1,7 +1,7 @@
-import { isValidUrl } from './main';
-import { showPreloader } from './main';
-import { hidePreloader } from './main';
-import { displayToast } from './main';
+import { isValidUrl } from './main.js';
+import { showPreloader } from './main.js';
+import { hidePreloader } from './main.js';
+import { displayToast } from './main.js';
 
 const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
