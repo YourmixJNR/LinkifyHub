@@ -7,11 +7,12 @@ const longUrlInput = document.getElementById('long-url');
 const shortenButton = document.getElementById('shorten-button');
 const shortUrlInput = document.getElementById('short-url');
 
+console.log('Starting script...');
 const testIt = import.meta.env.VITE_SHORTENER_ACCESS_TOKEN;
-console.log(testIt);
+console.log('VITE_SHORTENER_ACCESS_TOKEN:', testIt);
 
-const testTwo = 2+2;
-console.log(testTwo);
+const testTwo = 2 + 2;
+console.log('testTwo:', testTwo);
 
 document.addEventListener('DOMContentLoaded', () => {
   const accessToken = import.meta.env.VITE_SHORTENER_ACCESS_TOKEN;
