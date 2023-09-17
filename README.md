@@ -4,7 +4,7 @@ LinkifyHub is a versatile web application that offers the following features:
 
 1. URL Shortener: Easily shorten long URLs to create concise and shareable links.
 2. File Uploader: Quickly drop files to generate sharable links for easy sharing and distribution.
-3. URL Extractor: Extract all URLs from a text input or uploaded file to gather all links in one place.
+3. URL Extractor: Extract all Image \ Video URLs from a webpage. Gather all links in one place.
 
 ## Table of contents
 
@@ -32,7 +32,7 @@ LinkifyHub is a versatile web application that offers the following features:
 
 - URL Shortener: Create shortened links from long URLs with one click.
 - File Uploader: Drag and drop files for instant link generation.
-- URL Extractor: Gather all URLs from text or files effortlessly.
+- URL Extractor: Gather all Image \ Video URLs from webpage effortlessly.
 - Responsive Design: Enjoy a seamless user experience across various devices.
 
 ## Technologies Used
@@ -41,11 +41,11 @@ LinkifyHub is a versatile web application that offers the following features:
 - CSS3
 - JavaScript (ES6)
 - Fetch API for making API requests.
-- (Add any other technologies or libraries used in your project)
+- Vite
 
 ## Getting Started
 
-To run LinkifyHub on your local machine, follow these steps:
+To run LinkifyHub on your local machine with Vite, follow these steps:
 
 1. Clone this repository to your local machine using `git clone`.
 
@@ -56,8 +56,19 @@ git clone https://github.com/YourmixJNR/LinkifyHub.git
 ```
 cd linkifyhub
 ```
-3. Open `index.html` in your web browser or use a local server to serve the files.
+3. Install the project's dependencies using npm or yarn.
 
+npm install
+# or
+yarn install
+
+4. Start the development server.
+
+npm run dev
+# or
+yarn dev
+
+5. Open your web browser and access the development server at http://localhost:3000.
 ## Usage
 
 **URL Shortener:**
