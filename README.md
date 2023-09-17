@@ -57,17 +57,17 @@ git clone https://github.com/YourmixJNR/LinkifyHub.git
 cd linkifyhub
 ```
 3. Install the project's dependencies using npm or yarn.
-
+```bash
 npm install
-# or
+
 yarn install
-
+```
 4. Start the development server.
-
+```bash
 npm run dev
-# or
-yarn dev
 
+yarn dev
+```
 5. Open your web browser and access the development server at http://localhost:3000.
 ## Usage
 
