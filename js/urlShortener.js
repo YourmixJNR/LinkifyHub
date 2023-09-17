@@ -10,6 +10,9 @@ const shortUrlInput = document.getElementById('short-url');
 const testIt = import.meta.env.VITE_SHORTENER_ACCESS_TOKEN;
 console.log(testIt);
 
+const testTwo = 2+2;
+console.log(testTwo);
+
 document.addEventListener('DOMContentLoaded', () => {
   const accessToken = import.meta.env.VITE_SHORTENER_ACCESS_TOKEN;
   const apiUrl = import.meta.env.VITE_SHORTENER_API_URL;
