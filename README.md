@@ -60,7 +60,7 @@ cd linkifyhub
 ```bash
 npm install
 ```
-or
+-- or
 ```bash
 yarn install
 ```
@@ -68,7 +68,7 @@ yarn install
 ```bash
 npm run dev
 ```
-or
+-- or
 ```bash
 yarn dev
 ```
@@ -90,9 +90,9 @@ yarn dev
 
 **URL Extractor:**
 
-- Enter or paste text containing one or multiple URLs into the input field.
-- Click the "Extract URLs" button to extract all URLs from the text.
-- The extracted URLs will be displayed below the input field.
+- Enter or paste the webpage URLs into the input field.
+- Click the "Extract URLs" button to extract all Image \ Video URLs from the webpage.
+- The extracted URLs will be displayed above the input field.
 
 ## API Integration
 
