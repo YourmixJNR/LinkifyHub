@@ -1,7 +1,7 @@
 import { isValidUrl } from './main.js';
 import { showPreloader } from './main.js';
-import { hidePreloader } from '../main.js';
-import { displayToast } from '../main.js';
+import { hidePreloader } from './main.js';
+import { displayToast } from './main.js';
 
 const extractButton = document.getElementById('extract-button');
 const urUrlInput = document.getElementById('ur-url');
