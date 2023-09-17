@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>LinkifyHub</title>
+</head>
+<body>
+    <main>
+
+        <!-- Online Status -->
+
+        <div class="check-status">
+            <div class="check-status-box">
+                <span id="check-status-txt" class="check-txt"></span>
+            </div>
+        </div>
+        
+        <h1 class="h1txt">LinkifyHub</h1>
+
+        <!--  Toast Display -->
+
+        <div class="toast-box">
+            <div class="wrap-txt-ico">
+                <span id="real-wrap-txt" class="wrap-txt"></span>
+                <span onclick="window.icoFunc()" class="wrap-ico"></span>
+            </div>
+        </div>
+
+        <!-- URL shortener -->
+
+        <label for="url-shortener">URL shortener</label>
+
+        <div class="url-shortener">
+
+            <form id="urlForm" class="first-container">
+                <div class="first-input-container">
+                    <img src="assets/icons/add-link-icon.png" class="first-input-img">
+                    <input type="url" id="long-url" class="first-input-field" placeholder="Paste your URL here">
+                </div>
+                <button id="shorten-button" type="submit" class="first-button">Shorten</button>
+            </form>
+
+            <div class="preloader-overl">
+                <div class="prl-container">
+                    <div class="loader-txt">LinkifyHub...</div>
+                </div>
+            </div>
+
+            <div class="second_container">
+                <div class="second-input_container">
+                    <input type="url" id="short-url" class="second-input-field" placeholder="http://abbrefy.xyz/a3a4aa">
+                </div>
+                <button class="first-button" style="background: #00bec6;" onclick="window.copyText()">Copy</button>
+            </div>
+            
+        </div>
+
+        <!-- Drop a file to get a link -->
+
+        <label for="file-upload">Drop a file to get a link</label>
+
+        <div class="file-upload">
+            <div class="first-container">
+                <div class="file-input-container">
+                    <img src="assets/icons/attach-file-icon.png" class="first-input-img">
+                    <span class="file-placeholder" id="file-placeholder">Drop your attachments here</span>
+                    <span id="file-name" class="file-placeholder file-name"></span>
+                    <input type="file" id="file-input" class="first-input-field" accept=".txt, .pdf, .png, .jpg, .doc, .docx" style="opacity: 0; position: relative;">
+                </div>
+                <button id="upload-button" class="first-button">Get Link</button>
+            </div>
+
+            <div class="second_container">
+                <div class="second-input_container">
+                    <input type="url" id="uploaded-url" class="second-input-field" placeholder="https://file.io/...">
+                </div>
+                <button class="first-button" style="background: #00bec6;" onclick="window.copyFileUrl()">Copy</button>
+            </div>
+        </div> 
+            
+        <!-- URL extraction -->
+
+        <label for="url-shortener">Image \ Video links extractor</label>
+
+        <div class="URL-extraction">
+            <div class="first-container">
+                <div class="first-input-container">
+                    <img src="assets/icons/attach-file-icon.png" class="first-input-img">
+                    <input type="url" id="ur-url" class="first-input-field" placeholder="http://abbrefy.xyz/a3a4bazz">
+                </div>
+                <button id="extract-button" class="first-button">Extract URLs</button>
+            </div>
+
+            <div class="preloader-overl results-display" onclick="window.clickMeToClose()">
+                <div class="prl-container results-dis-inner">
+                    <h1 class="res-headings">Images link</h1>
+                    <div class="results-box" id="results-url-images">
+                        <!-- Image links will be appended here -->
+                    </div>
+                    <h1 class="res-headings">Videos link</h1>
+                    <div class="results-box" id="results-url-videos">
+                        <!-- Video links will be appended here -->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer text -->
+
+        <p class="built-design">built with ♥ from YourmixJNR_Dev</p>
+
+    </main>
+
+    <!-- js -->
+
+    <script type="module" src="js/main.js"></script>
+
+    <script type="module" src="js/urlShortener.js"></script>
+
+    <script type="module" src="js/fileUpload.js"></script>
+
+    <script type="module" src="js/imageVideo.js"></script>
+
+</body>
+</html>
