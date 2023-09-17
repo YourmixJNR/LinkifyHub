@@ -60,7 +60,7 @@ cd linkifyhub
 ```bash
 npm install
 ```
--- or
+  or
 ```bash
 yarn install
 ```
@@ -68,7 +68,7 @@ yarn install
 ```bash
 npm run dev
 ```
--- or
+  or
 ```bash
 yarn dev
 ```
@@ -96,14 +96,13 @@ yarn dev
 
 ## API Integration
 
-LinkifyHub uses external APIs for URL shortening. API documentation can be found at:
+LinkifyHub uses external APIs for URL shortening, File Uploading, URL Extraction. API documentations can be found at:
 
 - URL Shortener API: https://abbrefy.xyz/abbrefy_api
+- File Uploader API: https://www.file.io/developers
+- URL Extractor API: https://extractorapi.com/docs/
 
 ## Continued development
-
-
-As of now, only the URL shortener feature is fully functional. The file uploader and URL extractor features are still in progress, and I plan to work on them in the future.
 
 Contributions are highly encouraged! Whether you are a developer, designer, or tester, your help is valuable in making LinkifyHub even better. If you have ideas, bug fixes, or new features to propose, please consider contributing by opening issues or submitting pull requests.
 
