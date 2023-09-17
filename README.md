@@ -59,13 +59,17 @@ cd linkifyhub
 3. Install the project's dependencies using npm or yarn.
 ```bash
 npm install
-
+```
+or
+```bash
 yarn install
 ```
 4. Start the development server.
 ```bash
 npm run dev
-
+```
+or
+```bash
 yarn dev
 ```
 5. Open your web browser and access the development server at http://localhost:3000.
