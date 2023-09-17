@@ -19,7 +19,7 @@
 
 body {
     width: 100%;
-    background: url(assets/icons/background-image.png);
+    background: url(../assets/icons/background-image.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

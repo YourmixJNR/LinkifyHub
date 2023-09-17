@@ -1,7 +1,7 @@
-import { isValidUrl } from './main.js';
-import { showPreloader } from './main.js';
-import { hidePreloader } from './main.js';
-import { displayToast } from './main.js';
+import { isValidUrl } from './main';
+import { showPreloader } from './main';
+import { hidePreloader } from './main';
+import { displayToast } from './main';
 
 const fileInput = document.getElementById('file-input');
 const uploadButton = document.getElementById('upload-button');
